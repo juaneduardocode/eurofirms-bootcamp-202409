@@ -1,0 +1,14 @@
+fetch('http://localhost:8080/users/auth', {
+    method: 'INFO',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: '{"username":"peterpan","password":"123123123"}'
+})
+    .then(response => {
+        console.log(response.status)
+
+        return response.text()
+    })
+    .then(body => console.log(body))
+    .catch(error => console.error(error))
